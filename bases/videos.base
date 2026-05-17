@@ -1,0 +1,17 @@
+formulas:
+  thumbnail: image("thumb/" + file.name.replace(/\.md$/, "") + "-" + thumb + ".jpg")
+  open: link(source,"video link")
+views:
+  - type: cards
+    name: 動画一覧
+    filters:
+      and:
+        - file.folder == "obsidian/metadata"
+    order:
+      - title
+      - folder
+      - tags
+      - formula.open
+    sort: []
+    image: formula.thumbnail
+    imageAspectRatio: 0.56
